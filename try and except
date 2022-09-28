@@ -1,0 +1,8 @@
+x = 12
+y = 0
+
+try:
+    print(x/y)
+    print ('ta daaaaam')
+except ZeroDivisionError:
+    print ("Hola, hola, nie dziel przez zero")
