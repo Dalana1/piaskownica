@@ -1,0 +1,93 @@
+#print ("to jest funkcja")
+
+#don't repeat yourself 
+
+def funkcja_test():
+    print("drukuje fukcje..")
+
+
+#wywołanie funkcji
+
+funkcja_test()
+funkcja_test() 
+
+#argumenty tylko nazywamy w funkcji - po porstu podajemy nazwę argumentu i tyle
+
+def dodaj(x):
+    print (x+1)
+
+# x - poza funkcją już nie istenieje, jest tylko wewnątrz tej funcji
+
+zmienna_1 = dodaj(2)
+print ("drukujemy zmienna", zmienna_1)
+
+#pokazuje None ponieważ fukcja dodaj w takiej postaci nic nie zwraca, ponieważ nie posiada return a to pozwala wyjść poza ramy funkcji
+
+def dodaj(x, y):
+    print (x + y)
+
+dodaj (3, 5)
+
+#dodaj (2) - ta funkcja już tutaj nie działa bo brakuje argumentu , fukcja się przeciążyła bo ją nadpisaliśmy, 
+# i to co jest po linijce 23 korzysta tylko już z tej wersji funkcji dodaj, chyba, że drugi argument zrobimy opcjonalny to też bedzie działac
+# wszystko po return w funkcji już nie bedzie brane pod uwagę
+
+def dodaj(x, y = 1):
+    print(x + y)
+
+dodaj(2)
+dodaj (3, 5)
+
+print ("---------------------------------------------")
+
+def dodaj(x, y = 1, z = 0):
+    return x + y + z
+
+#return nie pokazuje wyniku jak w princie rezultatu, ale zwraca wartość poza ramy funkcji, 
+# jak nie użyjemy to to co jest w funkcji bedzie tylko w niej, poza już nie
+
+
+print(dodaj (2))
+print(dodaj(3,5)) #teraz pokaze wynik po return
+
+wynik = dodaj (3, 5, 2)
+print(wynik)
+
+print("-------------REKURENCJA/REKURSJA-------------")
+
+def func(x):
+    return x * x
+
+zmienna = func
+print(zmienna(5))
+#zmienna wyliczyła wartość, teraz ma 'zdolności' obliczenia jak funkcja
+
+zmienna =func(5)
+print(zmienna)
+#teraz zmienna przechowuje wartośc obliczenia
+
+def func2(f1, x): #chcemy aby funkcja przyjęła argument funkcji
+    return f1(x) * x
+
+print(func2(func, 5)) #func bez (), bo wysyłamy funkcję do innej funkcji
+
+
+#rekurencja zawsze wymaga przypadku domyslnego, bedzie to 1 bo silni nie trzeba liczyc. Jesli silnia wyniesie 1 to zwróci 1, 
+# jesli x >1 wewnatrz funkcji wywołamy ją samą - czyli rekurencja, w przeciwnym wypadku wyswietli napis
+
+
+def silnia(x):
+    if x == 0 or x == 1:
+        return 1
+    elif x > 1: 
+        return x * silnia(x-1)
+    else:
+        return "nie da się obliczyć silni z liczby ujemnej"
+
+
+print(silnia(-3))
+
+
+
+# silnia z 3! czyli wszystkie jej składowe czynniki mnożymy miedzy sobą aż do wartości 1 np.  3 = 3 * 2 * 1 = 6, mozna policzyc pętlą while
+# while i <= x, gdzie i = 1
