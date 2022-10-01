@@ -1,8 +1,32 @@
+
+# TRY i EXCEPT
+
 x = 12
 y = 0
 
 try:
     print(x/y)
     print ('ta daaaaam')
-except ZeroDivisionError:
+except ZeroDivisionError: #(mozna wpisac w nawiasach wiele błedów po przecinku)
     print ("Hola, hola, nie dziel przez zero")
+except TypeError:
+    print ('Błąd typów danych')
+except: #na samym konca sam except bedzie przechwytywał kazdy inny blad
+    print("to jakis inny blad")
+finally: #zawsze na końcu, nie jest wymagany, wykonuje swoje zadania w kazdym przypadku, np. wylogowuje czy sie uda wczytac uzytkownika czy nie
+    print("a ja i tak zrobię swoje")
+
+print('program działa mimo błedu ...')
+
+print ('-------------------------------------------------------------------')
+# RAISE i  ASSERT
+#raise - wznieś (czyli jakby wyrzuć), mozna dodac wlasny opis
+#assert - zapewniać- przyjmuje warunek prawdy/fałsz, mozna uzywac w programowaniu jako progi kluczowe do spr poszczególnyh etapów
+
+def dzielenie(x, y):
+    assert y  != 0
+    if y == 0:
+        raise ZeroDivisionError("dodam komentarz - dzielenie przez zero")
+    print(x/y)
+
+dzielenie (2, 0)
