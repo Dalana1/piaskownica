@@ -1,0 +1,31 @@
+# -------------------TUPLA, krotka-------------------------
+
+krotka = (2, 4, 8, 16, 32, 64, 128)
+print(krotka[0])
+print(krotka[6])
+
+# w tuplach jak w listach, zaczynamy liczenie od indeksu 0
+
+print(krotka)
+
+#krotka[0] = 1
+# w tupli nie mozna przypisać elementów, modyfikować. Przez to można wykonać mniej działań niż na liście
+
+print("elementów:", krotka.count(1))
+print('index:', krotka.index(64))
+
+
+# -----------------------WYCINEK---------------------------
+
+print("\n-------WYCINEK----------\n")
+
+#wyciek pozwala na wycięcie części elementów i zwrócić w postaci nowej kolekcji np. zmiennej bądź wyświetlić
+
+print(krotka[0:3]) #nowa kolekcja od indexu 0 - do 3ciego elementu, ale nie bierze go pod uwagę czyli do 2giego włącznie. domyka z lewej strony
+print(krotka[3:6])
+print("cała kolekcja: krotka lub krotka [0:]", krotka)
+print( 'od tyłu liczony: krotka[-4:-2] --->',krotka[-4:-2]) # - liczymy o końca ale od 1. -2 kończy na drugim od końca elemencie ale domyka z lewej strony więc będzie to 3ci od końca
+print('skok: krotka [0:7:2] ---> ', krotka [0:7:2])
+print ('od początku do 3 indexu -->', krotka[:4])
+print('odwrócenie kolejności krotka [::-1]--->', krotka [::-1]) 
+print (krotka[::-2]) #co drugi element ale odwrócona kolekcja bo wartość ujemna
