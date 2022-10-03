@@ -1,0 +1,45 @@
+# SŁOWNIK
+
+# przechowuje parę wartości: klucz - wartość
+
+slownik = {1: "Poniedziałek", 2: "Wtorek", 7: "Niedziela"}
+
+print(slownik[1])
+print(slownik[7])
+
+slownik[3] = "Środa" #dodaje do słownika element, w nawiasie klucz i jaka wartość
+slownik[4] = False
+slownik[5] = 5
+
+#słownik moze zbierać różne typy danych
+
+print (slownik)
+
+slownik["a"] = 1
+print(slownik["a"])
+print(slownik)
+
+#print(slownik[8]) #keyerror: 8, błąd klucza  
+
+print(slownik.get(8, "inny dzień")) # get podaje opcjonalny parametr, który zostanie zwrócony jesli w naszym słowniku nie ma tego wskazania
+
+print('\n --------słownik wyświetlany w pętli-------')
+
+for l in slownik:
+    print(l)
+
+#pętla iteruje po kluczach a nie po wartościach, to samo poniżej mozna metoda keys
+
+# for l in slownik.keys():
+#     print(l)
+print("\n\niterowanie po wartościach\n")
+
+for l in slownik.values():
+    print(l)
+
+print('\n\n\n')
+
+#usunięcie ze słownika POP
+
+print(slownik.pop('a')) #usunięcie elementu o kluczu 'a'
+print(slownik)
